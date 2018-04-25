@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="dc0b20c8-27ff-4f37-b582-8c51fa80de29" name="qoobeo SVG animation" url="http://pro.qoobeo.ru/qsvgl">
+        <fileTransfer host="onix.myjino.ru" port="21" rootFolder="/domains/pro.qoobeo.ru/qsvgl" password="dfc8dfc3dfd0dfc5dfc4" username="onix">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
