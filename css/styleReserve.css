@@ -1,0 +1,103 @@
+* {margin: 0; padding: 0;}
+
+g > line {transition: all 1s ease-in-out;}
+#top_left{rotate(0deg) translate(0,0); transform-origin: right top;}
+#top_left:hover {transform: translate(208px, -32px) rotate(45deg);}
+
+
+.qsvgl-wrapper {width: 100%; height: 100%;background-color: #595959ab;
+    position: fixed;
+}
+
+.qsvgl > div.red {background-color: red;}
+.qsvgl > div.yellow {background-color: yellow; opacity: 0.5;}
+.qsvgl > div.green {background-color: greenyellow; opacity: 0.5;}
+
+.qsvgl {width: 220px; height:400px; background-color: transparent; position: relative;
+    margin: 50px auto 0; animation: qsvgl 10s infinite ease;}
+
+.qsvgl > div {animation-fill-mode: both;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transition: all 1s ease-in-out;
+    transform-origin: right top;
+    height: 5px; width: 150px; background-color: #000;    position: absolute;}
+
+.qsvgl .top_left {transform: translate(-40px, 0px) rotate(-45deg);}
+.qsvgl .top_right {animation-name: topRight;  }
+.qsvgl .right { animation-name:Right; }
+.qsvgl .mid_right { animation-name:midRight; }
+.qsvgl .mid { animation-name:mid; }
+.qsvgl .bot_right { animation-name:botRight; }
+.qsvgl .bot_left { animation-name:botLeft; }
+.qsvgl .mid_left { animation-name:midLeft; }
+.qsvgl .left { animation-name:left;}
+
+
+@keyframes qsvgl {
+    0% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes topRight {
+    0% {transform: translate(-40px, 0px) rotate(-45deg);}
+    12% {transform: translate(-43px, 3px) rotate(-135deg);}
+    100% {transform: translate(-43px, 3px) rotate(-135deg);}
+}
+
+@keyframes Right {
+    0% {transform: translate(67px, 106px) rotate(45deg); opacity: 0;}
+    11% {transform: translate(67px, 106px) rotate(45deg); opacity: 0;}
+    12% {transform: translate(67px, 106px) rotate(45deg);  opacity: 1;}
+    25% {transform: translate(62px, 106px) rotate(-90deg)}
+    100% {transform: translate(62px, 106px) rotate(-90deg)}
+}
+
+@keyframes midRight {
+    0% {transform: translate(67px, 256px) rotate(90deg); opacity: 0;}
+    24% {transform: translate(67px, 256px) rotate(90deg);opacity: 0;}
+    25% {transform: translate(67px, 256px) rotate(90deg);opacity: 1;}
+    37% {transform: translate(67px, 254px) rotate(45deg);}
+    100% {transform: translate(67px, 254px) rotate(45deg);}
+}
+
+@keyframes mid {
+    0% {transform: translate(-42px, 152px) rotate(225deg); opacity: 0;}
+    36% {transform: translate(-42px, 152px) rotate(225deg);  opacity: 0;}
+    37% {transform: translate(-42px, 152px) rotate(225deg);  opacity: 1;}
+    50% {transform: translate(-37px, 152px) rotate(90deg)}
+    100% {transform: translate(-37px, 152px) rotate(90deg)}
+}
+
+@keyframes botRight {
+    0% {transform: translate(70px, 253px) rotate(45deg); opacity: 0;}
+    49% {transform: translate(70px, 253px) rotate(45deg);  opacity: 0;}
+    50% {transform: translate(70px, 253px) rotate(45deg);  opacity: 1;}
+    62% {transform: translate(63px, 253px) rotate(-45deg);}
+    100% {transform: translate(63px, 253px) rotate(-45deg);}
+}
+
+@keyframes botLeft {
+    0% {transform: translate(-39px, 362px) rotate(135deg); opacity: 0;}
+    61% {transform: translate(-39px, 362px) rotate(135deg);  opacity: 0;}
+    62% {transform: translate(-39px, 362px) rotate(135deg);  opacity: 1;}
+    75% {transform: translate(-36px, 359px) rotate(45deg);}
+    100% {transform: translate(-36px, 359px) rotate(45deg);}
+}
+
+@keyframes midLeft {
+    0% {transform: translate(-146px, 256px) rotate(-135deg); opacity: 0;}
+    74% {transform: translate(-146px, 256px) rotate(-135deg);  opacity: 0;}
+    75% {transform: translate(-146px, 256px) rotate(-135deg);  opacity: 1;}
+    87% {transform: translate(-142px, 258px) rotate(-225deg);}
+    100% {transform: translate(-142px, 258px) rotate(-225deg);}
+}
+@keyframes left {
+    0% {transform: translate(-142px, 258px) rotate(-225deg); opacity: 0;}
+    86% {transform: translate(-142px, 258px) rotate(-225deg); opacity: 0;}
+    87% {transform: translate(-142px, 258px) rotate(-225deg); opacity: 1;}
+    88% {transform: translate(-142px, 258px) rotate(-225deg);}
+    100% {transform: translate(-141px, 256px) rotate(-270deg);}
+}
