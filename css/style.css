@@ -15,6 +15,8 @@ g > line {transition: all 1s ease-in-out;}
     z-index: 10000;
 }
 
+.qsvgl-wrapper.removed {animation: qsvglWrapRemoved 1s 1 ease-in; animation-fill-mode: both;}
+
 .qsvgl > div.red {background-color: red;}
 .qsvgl > div.yellow {background-color: yellow; opacity: 0.5;}
 .qsvgl > div.green {background-color: greenyellow; opacity: 0.5;}
@@ -22,7 +24,8 @@ g > line {transition: all 1s ease-in-out;}
 .qsvgl {width: 220px; height:400px; background-color: transparent;
     /*position: relative;*/
     /*margin: 50px auto 0;*/
-    animation: qsvgl 6s infinite ease;}
+    animation: qsvgl 6s infinite ease;
+}
 
 .qsvgl > div {animation-fill-mode: both;
     animation-duration: 6s;
@@ -42,6 +45,11 @@ g > line {transition: all 1s ease-in-out;}
 .qsvgl .mid_left { animation-name:midLeft; }
 .qsvgl .left { animation-name:left;}
 
+
+@keyframes qsvglWrapRemoved {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
 
 @keyframes qsvgl {
     0% {opacity: 1;}
@@ -83,9 +91,9 @@ g > line {transition: all 1s ease-in-out;}
 }
 
 @keyframes botRight {
-    0% {transform: translate(70px, 253px) rotate(45deg); opacity: 0;}
-    39% {transform: translate(70px, 253px) rotate(45deg);  opacity: 0;}
-    40% {transform: translate(70px, 253px) rotate(45deg);  opacity: 1;}
+    0% {transform: translate(67px, 254px) rotate(45deg); opacity: 0;}
+    39% {transform: translate(67px, 254px) rotate(45deg);  opacity: 0;}
+    40% {transform: translate(67px, 254px) rotate(45deg);  opacity: 1;}
     50% {transform: translate(63px, 253px) rotate(-45deg);}
     100% {transform: translate(63px, 253px) rotate(-45deg);}
 }
