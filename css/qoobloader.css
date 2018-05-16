@@ -1,5 +1,6 @@
 .qsvgl-wrapper { font-family: Tahoma, Geneva, sans-serif;
-    width: 100%; height: 100%;background-color: #595959ab;
+    width: 100%; height: 100%;
+    background-color: #595959ab;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -9,13 +10,19 @@
     z-index: 10000;
 }
 
+.qsvgl-wrapper.whiteBg {background-color: #fff;}
+.qsvgl-wrapper.showAgain {animation: qsvglWrapShowAgain 0.15s 1 ease-in-out;  }
+
+
 .qsvgl-wrapper.removed {animation: qsvglWrapRemoved 1s 1 ease-in; animation-fill-mode: both;}
 
 .qsvgl > div.red {background-color: red;}
 .qsvgl > div.yellow {background-color: yellow; opacity: 0.5;}
 .qsvgl > div.green {background-color: greenyellow; opacity: 0.5;}
 
-.qsvgl-wrapper.removed .qsvgl {
+.qsvgl-wrapper.removed .qsvgl, .qsvgl-wrapper.removed .qsvgl > div  {
+    /*animation: none;*/
+    /*animation-iteration-count: 1;*/
 }
 
 
@@ -26,6 +33,8 @@
 
     animation: qsvgl 6s infinite ease;
 }
+
+.qsvgl-wrapper.active {}
 
 .qsvgl > div {animation-fill-mode: both;
     animation-duration: 6s;
@@ -50,6 +59,11 @@
     0% {opacity: 1;}
     99% {opacity: 0;}
     100% {opacity: 0; z-index: -1000; display: none;}
+}
+
+@keyframes qsvglWrapShowAgain {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 @keyframes qsvgl {
