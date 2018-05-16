@@ -54,13 +54,15 @@
     function removeLogo() {
         var qsvglWrap = document.querySelector('.qsvgl-wrapper');
         qsvglWrap.setAttribute('class', 'qsvgl-wrapper removed');
-        setTimeout(function () {
-            document.body.removeChild(qsvglWrap);
-        }, 1200);
+        // Это не нужно, если мы хотим вызывать лоадер вновь
+        // setTimeout(function () {
+        //     document.body.removeChild(qsvglWrap);
+        // }, 1200);
     }
 
     window.addEventListener('load', function (){
         console.log('типа всё загрузилось');
+        // TODO: ремовЛого надо вызывать в том месте, где вызывается последний js
         setTimeout(removeLogo, 2000);
     });
 
