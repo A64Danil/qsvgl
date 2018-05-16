@@ -15,9 +15,15 @@
 .qsvgl > div.yellow {background-color: yellow; opacity: 0.5;}
 .qsvgl > div.green {background-color: greenyellow; opacity: 0.5;}
 
+.qsvgl-wrapper.removed .qsvgl {
+}
+
+
 .qsvgl {width: 220px; height:400px; background-color: transparent;
     /*position: relative;*/
     /*margin: 50px auto 0;*/
+    animation-fill-mode: backwards;
+
     animation: qsvgl 6s infinite ease;
 }
 
@@ -42,7 +48,8 @@
 
 @keyframes qsvglWrapRemoved {
     0% {opacity: 1;}
-    100% {opacity: 0;}
+    99% {opacity: 0;}
+    100% {opacity: 0; z-index: -1000; display: none;}
 }
 
 @keyframes qsvgl {

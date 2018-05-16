@@ -4,3 +4,4 @@ g > line {transition: all 1s ease-in-out;}
 #top_left{rotate(0deg) translate(0,0); transform-origin: right top;}
 #top_left:hover {transform: translate(208px, -32px) rotate(45deg);}
 
+p > span.hint {color: #888; font-size: 80%;}

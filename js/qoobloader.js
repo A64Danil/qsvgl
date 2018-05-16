@@ -13,6 +13,18 @@
  *
  */
 
+function removeLoader() {
+    console.log('сейчас будем скрывать лоадер');
+    var qsvglWrap = document.querySelector('.qsvgl-wrapper');
+    qsvglWrap.setAttribute('class', 'qsvgl-wrapper removed');
+}
+
+function showLoader() {
+    console.log('сейчас будем показывать лоадер');
+    var qsvglWrap = document.querySelector('.qsvgl-wrapper');
+    qsvglWrap.setAttribute('class', 'qsvgl-wrapper');
+}
+
 (function () {
 
     function addElement(tag, className, place = document.body, before) {
@@ -51,19 +63,14 @@
 
     addLogo();
 
-    function removeLogo() {
-        var qsvglWrap = document.querySelector('.qsvgl-wrapper');
-        qsvglWrap.setAttribute('class', 'qsvgl-wrapper removed');
-        // Это не нужно, если мы хотим вызывать лоадер вновь
-        // setTimeout(function () {
-        //     document.body.removeChild(qsvglWrap);
-        // }, 1200);
-    }
+
+    
+
 
     window.addEventListener('load', function (){
         console.log('типа всё загрузилось');
         // TODO: ремовЛого надо вызывать в том месте, где вызывается последний js
-        setTimeout(removeLogo, 2000);
+        setTimeout(removeLoader, 2000);
     });
 
     document.addEventListener('DOMContentLoaded', function (){
