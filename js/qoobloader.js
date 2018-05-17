@@ -13,26 +13,29 @@
  *
  */
 
+
+var __QL_isLoad; // if true, then remove Loader
+
 function removeLoader() {
     var qsvglWrap = document.querySelector('.qsvgl-wrapper');
-    if (qsvglWrap != null) {
+    if (qsvglWrap != null) { // if exist
         //console.log('now we remove loader');
 
         qsvglWrap.className += " removed";
         setTimeout(function () {
             document.body.removeChild(qsvglWrap);
             qsvglWrap = null;
-        }, 1100);
+        }, 800);
     }
 }
 
 function showLoader(param) {
     console.log('create loader now');
-    addLogo(param);
+    __QL_addLogo(param);
 }
 
-function addLogo(param) {
-    addElement('div', 'qsvgl-wrapper', document.body, 'before');
+function __QL_addLogo(param) {
+    __QL_addElement('div', 'qsvgl-wrapper', document.body, 'before');
     var qsvglWrap = document.querySelector('.qsvgl-wrapper');
 
     if (param) {
@@ -41,27 +44,27 @@ function addLogo(param) {
         qsvglWrap.setAttribute('class', tmp);
     }
 
-    addElement('div', 'qsvgl test2', qsvglWrap);
+    __QL_addElement('div', 'qsvgl test2', qsvglWrap);
     var qsvgl = document.querySelector('.qsvgl');
-    addElement('div', 'qsvgl-text', qsvglWrap);
+    __QL_addElement('div', 'qsvgl-text', qsvglWrap);
     var qsvglText = document.querySelector('.qsvgl-text');
     qsvglText.textContent = 'Loading';
-    addElement('div', 'qsvgl-textDots', qsvglText);
+    __QL_addElement('div', 'qsvgl-textDots', qsvglText);
     var qsvglTextDots = document.querySelector('.qsvgl-textDots');
     qsvglTextDots.textContent = '...';
 
-    addElement('div', 'line top_left', qsvgl);
-    addElement('div', 'line top_right', qsvgl);
-    addElement('div', 'line right', qsvgl);
-    addElement('div', 'line mid_right', qsvgl);
-    addElement('div', 'line mid', qsvgl);
-    addElement('div', 'line bot_right', qsvgl);
-    addElement('div', 'line bot_left', qsvgl);
-    addElement('div', 'line mid_left', qsvgl);
-    addElement('div', 'line left', qsvgl);
+    __QL_addElement('div', 'line top_left', qsvgl);
+    __QL_addElement('div', 'line top_right', qsvgl);
+    __QL_addElement('div', 'line right', qsvgl);
+    __QL_addElement('div', 'line mid_right', qsvgl);
+    __QL_addElement('div', 'line mid', qsvgl);
+    __QL_addElement('div', 'line bot_right', qsvgl);
+    __QL_addElement('div', 'line bot_left', qsvgl);
+    __QL_addElement('div', 'line mid_left', qsvgl);
+    __QL_addElement('div', 'line left', qsvgl);
 }
 
-function addElement(tag, className, place = document.body, before) {
+function __QL_addElement(tag, className, place = document.body, before) {
     var el = document.createElement(tag);
     el.setAttribute('class', className);
     if (before) {
@@ -73,16 +76,16 @@ function addElement(tag, className, place = document.body, before) {
 }
 
 (function () {
-    addLogo("whiteBg");
+    __QL_addLogo("whiteBg");
 
     window.addEventListener('load', function (){
-        console.log('типа всё загрузилось');
+        console.info('Всё загрузилось');
         // You need to call removeLoader in your own place, at the end of loading
-        setTimeout(removeLoader, 1000);
+        setTimeout(removeLoader, 400);
     });
 
     document.addEventListener('DOMContentLoaded', function (){
-        console.log('DOM готов к работе');
+        console.info('DOM готов к работе');
     });
 
 })();

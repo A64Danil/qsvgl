@@ -14,7 +14,7 @@
 .qsvgl-wrapper.showAgain {animation: qsvglWrapShowAgain 0.15s 1 ease-in-out;  }
 
 
-.qsvgl-wrapper.removed {animation: qsvglWrapRemoved 1s 1 ease-in; animation-fill-mode: both;}
+.qsvgl-wrapper.removed {animation: qsvglWrapRemoved 0.65s 1 ease-in; animation-fill-mode: both;}
 
 .qsvgl > div.red {background-color: red;}
 .qsvgl > div.yellow {background-color: yellow; opacity: 0.5;}
