@@ -19,13 +19,14 @@
                 <p><a href="demo/loading.html">Here</a> you can see endless loading animation</p>
                 <hr>
                 <p class="h4">Here my own "cdn" source:</p>
-                <p>JS: http://pro.qoobeo.ru/qsvgl/js/qoobloader.js</p>
-                <p>CSS: http://pro.qoobeo.ru/qsvgl/css/qoobloader.css</p>
+                <p><span class="unselected">CSS: </span>http://pro.qoobeo.ru/qsvgl/css/qoobloader.css</p>
+                <p><span class="unselected">JS: </span>http://pro.qoobeo.ru/qsvgl/js/qoobloader.js</p>
                 <hr>
             </div>
 
             <div class="col-12">
                 <p class="h3">Manual:</p>
+
                 <p class="h6">To call Loader again, use function showLoader() <span class="hint">(just call it in your own place)</span>
                 </p>
                 <pre>function showLoader() {
@@ -33,6 +34,7 @@
                     qsvglWrap.setAttribute('class', 'qsvgl-wrapper');
                 }
                 </pre>
+
                 <p class="h6">To remove Loader, use function removeLoader() <span class="hint">(just call it in your own place)</span>
                 </p>
                 <pre>function removeLogo() {
@@ -40,10 +42,18 @@
                     qsvglWrap.setAttribute('class', 'qsvgl-wrapper removed');
                 }
                 </pre>
-                <p class="h6">To async check state of Loader, use global variable __QL_isLoad <span class="hint">(is true, if loaded)</span>
+
+                <p class="h6">To async check state of Loader, use global variable __QL_isLoad <span class="hint">(is not defined at deafult)</span>
                 </p>
                 <pre>
                     __QL_isLoad
+                </pre>
+                <hr>
+
+                <p class="h6">If you want to remove QLoader manualy, then you need change value of __QL_isLoad to "false"<span class="hint">(is true, if loaded)</span>
+                </p>
+                <pre>
+                    __QL_simpleLoad = false;
                 </pre>
                 <hr>
             </div>
@@ -99,7 +109,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-<script src="js/custom.js"></script>
 <script src="js/qoobloader.js"></script>
+<script src="js/custom.js"></script>
 </body>
 </html>

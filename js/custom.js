@@ -3,6 +3,8 @@
  */
 
 console.log('Node are working. Тест русских симовлов');
+__QL_simpleLoad = false;
+removeLoader();
 
 (function () {
     function inherit(child, parent) {
