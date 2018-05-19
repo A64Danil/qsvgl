@@ -5,3 +5,9 @@ g > line {transition: all 1s ease-in-out;}
 #top_left:hover {transform: translate(208px, -32px) rotate(45deg);}
 
 p > span.hint {color: #888; font-size: 80%;}
+
+.unselected {
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;}
