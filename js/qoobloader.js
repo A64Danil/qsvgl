@@ -15,6 +15,8 @@
 
 
 var __QL_isLoad; // if true, then remove Loader
+var __QL_simpleLoad; // if false, then remove Loader manualy in your own place
+//__QL_simpleLoad = false;
 
 function removeLoader() {
     var qsvglWrap = document.querySelector('.qsvgl-wrapper');
@@ -30,7 +32,7 @@ function removeLoader() {
 }
 
 function showLoader(param) {
-    console.log('create loader now');
+    //console.log('create loader now');
     __QL_addLogo(param);
 }
 
@@ -79,9 +81,11 @@ function __QL_addElement(tag, className, place = document.body, before) {
     __QL_addLogo("whiteBg");
 
     window.addEventListener('load', function (){
-        console.info('Всё загрузилось');
+        console.info('Window is load. If you still see loader, then you dont start remove function. The __QL_simpleLoad is: ' + __QL_simpleLoad);
         // You need to call removeLoader in your own place, at the end of loading
-        setTimeout(removeLoader, 400);
+        if (__QL_simpleLoad !== false) {
+            setTimeout(removeLoader, 400);
+        }
     });
 
     document.addEventListener('DOMContentLoaded', function (){
